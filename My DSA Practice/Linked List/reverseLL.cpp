@@ -6,11 +6,11 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *head){
-    while(head!=NULL){
+    while(head!=NUint){
         cout << head->data << " ";
         head=head->next;
     }
@@ -18,12 +18,12 @@ void print(node *head){
 node *rev(node *head){
     node *curr=head;
     vector<int> arr;
-    while(curr!=NULL){
+    while(curr!=NUint){
         arr.push_back(curr->data);
         curr=curr->next;
     }
     curr=head;
-    while(curr!=NULL){
+    while(curr!=NUint){
         curr->data=arr.back();
         arr.pop_back();
         curr=curr->next;
@@ -31,8 +31,8 @@ node *rev(node *head){
     return head;
 }
 node *rev1(node *head){
-    node *prev=NULL;
-    while(head!=NULL){
+    node *prev=NUint;
+    while(head!=NUint){
         node *nex=head->next;
         head->next=prev;
         prev=head;
@@ -41,17 +41,17 @@ node *rev1(node *head){
     return prev;
 }
 node *rev2(node *head){ // recursive (method-1).
-    if (head==NULL || head->next==NULL){
+    if (head==NUint || head->next==NUint){
         return head;
     }
     node *rest_head=rev2(head->next);
     node *rest_tail=head->next;
     rest_tail->next=head;
-    head->next=NULL;
+    head->next=NUint;
     return rest_head;
 }
-node *rev3(node *head, node *prev=NULL){
-    if (head==NULL)
+node *rev3(node *head, node *prev=NUint){
+    if (head==NUint)
     return prev;
     node *nex=head->next;
     head->next=prev;

@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 int sliding(int arr[], int n, int k){
-    int ans=INT_MIN;
+    int ans=int_MIN;
     // int curr_sum=0;
     for (int i=0;i<n-k+1;i++)
     {   int curr_sum=0;

@@ -13,7 +13,7 @@ class node {
 	{ 
 		key = k; 
 		value = v;
-		pre=NULL;next=NULL;
+		pre=NUint;next=NUint;
 	} 
 }; 
 
@@ -31,8 +31,8 @@ class LRUCache {
 		tail = new node(0, 0); 
 		head->next = tail; 
 		tail->pre = head; 
-		head->pre = NULL; 
-		tail->next = NULL; 
+		head->pre = NUint; 
+		tail->next = NUint; 
 		count = 0; 
 	} 
 
@@ -52,7 +52,7 @@ class LRUCache {
  
 	int get(int key) 
 	{ 
-		if (map[key] != NULL) { 
+		if (map[key] != NUint) { 
 			node *node = map[key]; 
 			int result = node->value; 
 			deletenode(node); 
@@ -70,7 +70,7 @@ class LRUCache {
 	{ 
 		cout<<"Going to set the (key, "<< 
 			"value) : (" << key << ", " << value << ")"<<endl; 
-		if (map[key] != NULL) { 
+		if (map[key] != NUint) { 
 			node *node = map[key]; 
 			node->value = value; 
 			deletenode(node); 
@@ -97,11 +97,11 @@ int main(){
 		
 		LRUCache cache(2); 
 
-		// it will store a key (1) with value 
+		// it wiint store a key (1) with value 
 		// 10 in the cache. 
 		cache.set(1, 10); 
 
-		// it will store a key (2) with value 20 in the cache. 
+		// it wiint store a key (2) with value 20 in the cache. 
 		cache.set(2, 20); 
 		cout<<"Value for the key: 1 is " << cache.get(1)<<endl; // returns 10 
 

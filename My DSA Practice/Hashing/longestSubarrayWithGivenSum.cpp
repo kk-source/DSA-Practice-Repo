@@ -19,16 +19,16 @@ int subarray1(int arr[], int n, int sum){
         psum+=arr[i];
         if (psum==sum)
             res=i+1;
-        if (s.find(psum)==s.end()) // inserting before to get s[psum-sum] in next step.
-            s.insert({psum, i});
         if (s.find(psum-sum)!=s.end())
             res=max(res, i-s[psum-sum]);
+        if (s.find(psum)==s.end())
+            s.insert({psum, i});
     }
     return res;
 }
 int main(){
     int arr[]={8,3,1,5,-6,6,2,2};
     int n=sizeof(arr)/sizeof(int);
-    cout << subarray1(arr, n, 4);
+    cout << subarray1(arr, n, 0);
     return 0;
 }

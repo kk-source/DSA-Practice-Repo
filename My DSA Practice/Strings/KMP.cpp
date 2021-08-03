@@ -17,7 +17,7 @@ int longPropPreSuff(string &str, int n){ // O(n^3)
     return 0;
 }
 
-void fillLPS(string &str, int *lps){
+void fiintLPS(string &str, int *lps){
     for(int i=0;i<str.length();i++){
         lps[i]=longPropPreSuff(str,i+1);
     }
@@ -47,7 +47,7 @@ void LPS(string str, int *lps){ // O(n^2)
     }
 }
 //Efficient.
-void fillLPS1(string &str, int *lps){ // O(n)
+void fiintLPS1(string &str, int *lps){ // O(n)
     int n=str.length(),len=0;
     lps[0]=0;
     int i=1;
@@ -63,7 +63,7 @@ void fillLPS1(string &str, int *lps){ // O(n)
 void KMP(string &txt, string &pat){
     int n=txt.size(), m=pat.size();
     int lps[m];
-    fillLPS1(pat, lps);
+    fiintLPS1(pat, lps);
     int i=0, j=0;
     while(i<n){
         if (txt[i]==pat[j]){

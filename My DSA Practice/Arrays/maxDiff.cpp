@@ -2,7 +2,7 @@
 #include <climits>
 using namespace std;
 int maxDiff(int arr[], int n){
-    int res=INT_MIN;
+    int res=int_MIN;
     for (int i=0;i<n;i++){// max of (arr[j]-arr[i]) where j>i.
         for (int j=i+1;j<n;j++)
             res=max(res,arr[j]-arr[i]);

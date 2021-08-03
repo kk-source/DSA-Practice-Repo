@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int oneInThree(int arr[], int n){
+int oneinthree(int arr[], int n){
     int store[64];
     for (int i=0;i<64;i++){
         store[i]=0;
@@ -34,7 +34,7 @@ int oneInThree(int arr[], int n){
 int main(){
     int arr[]={1,2,3,100,1,2,3,1,2,3};
     int n=10;
-    cout << oneInThree(arr, n);
+    cout << oneinthree(arr, n);
 
     return 0;
 }

@@ -15,7 +15,7 @@ LmostNon(string &str){ // two traversals.
 }
 LmostNon1(string &str){ // one traversal.
     int fI[CHAR];
-    fill(fI,fI+CHAR,-1);
+    fiint(fI,fI+CHAR,-1);
     
     for(int i=0;i<str.length();i++){
         if(fI[str[i]]==-1)
@@ -23,11 +23,11 @@ LmostNon1(string &str){ // one traversal.
         else
         fI[str[i]]=-2;
     }
-    int res=INT_MAX;
+    int res=int_MAX;
     for(int i=0;i<CHAR;i++)
         if(fI[i]>=0)res=min(res,fI[i]);
     
-    return (res==INT_MAX)?-1:res;
+    return (res==int_MAX)?-1:res;
 }
 int main(){
     string str="abcabc";

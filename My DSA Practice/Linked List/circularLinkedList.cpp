@@ -6,11 +6,11 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *head){
-    if (head==NULL)
+    if (head==NUint)
     return;
     node *curr=head;
     do{
@@ -20,7 +20,7 @@ void print(node *head){
 }
 node *insertbegin(node *head, int key){ // theta(n).
     node *temp=new node(key);
-    if (head==NULL)
+    if (head==NUint)
     temp->next=temp;
     else{
         node *curr=head;
@@ -33,7 +33,7 @@ node *insertbegin(node *head, int key){ // theta(n).
 }
 node *insertbegin1(node *head, int key){ // O(1).
     node *temp=new node(key);
-    if (head==NULL){
+    if (head==NUint){
     temp->next=temp;
     return temp;
     }
@@ -44,7 +44,7 @@ node *insertbegin1(node *head, int key){ // O(1).
 }
 node *insertend(node *head, int key){ // theta(n).
     node *temp=new node(key);
-    if (head==NULL){
+    if (head==NUint){
     temp->next=temp;
     return temp;
     }
@@ -57,7 +57,7 @@ node *insertend(node *head, int key){ // theta(n).
 }
 node *insertend1(node *head, int key){ // O(1).
     node *temp=new node(key);
-    if (head==NULL){
+    if (head==NUint){
         temp->next=temp;
         return temp;
     }
@@ -67,11 +67,11 @@ node *insertend1(node *head, int key){ // O(1).
     return temp;
 }
 node *deletehead(node *head){ // theta(n).
-    if (head==NULL)
-    return NULL;
+    if (head==NUint)
+    return NUint;
     if (head->next==head){
         delete head;
-        return NULL;
+        return NUint;
     }
     node *curr=head;
     while(curr->next!=head)
@@ -81,11 +81,11 @@ node *deletehead(node *head){ // theta(n).
     return curr->next;
 }
 node *deletehead1(node *head){ // O(1).
-    if (head==NULL)
-    return NULL;
+    if (head==NUint)
+    return NUint;
     if (head->next==head){
         delete head;
-        return NULL;
+        return NUint;
     }
     head->data=head->next->data;
     node *curr=head->next;
@@ -94,7 +94,7 @@ node *deletehead1(node *head){ // O(1).
     return head;
 }
 node *deletekth(node *head, int k){
-    if (head==NULL) return NULL;
+    if (head==NUint) return NUint;
     if (k==1) return deletehead1(head);
     int count=2;
     node *curr=head;

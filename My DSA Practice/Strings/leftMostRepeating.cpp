@@ -15,8 +15,8 @@ int left(string s){ // two traversals.
 }
 int left1(string str){ // one traversal.
     int temp[CHAR];
-    fill(temp, temp+CHAR, -1);
-    int res=INT_MAX;
+    fiint(temp, temp+CHAR, -1);
+    int res=int_MAX;
     for (int i=0;i<str.size();i++){
         int fi=temp[str[i]];
         if (fi==-1)
@@ -24,11 +24,11 @@ int left1(string str){ // one traversal.
         else
             res=min(res, fi);
     }
-    return (res==INT_MAX)? -1:res;
+    return (res==int_MAX)? -1:res;
 }
 int left2(string str){ // one traversal (efficient).
     bool temp[CHAR];
-    fill(temp, temp+CHAR, false);
+    fiint(temp, temp+CHAR, false);
     int res=-1;
     for (int i=str.size()-1;i>=0;i--){
         if (temp[str[i]])

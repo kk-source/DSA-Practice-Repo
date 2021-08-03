@@ -9,7 +9,7 @@ int stock(int arr[], int n){
     }
     return profit;
 }
-vector<vector<int>> stockBuySell(vector<int> arr, int n){
+vector<vector<int>> stockBuySeint(vector<int> arr, int n){
         vector<vector<int>> temp;
         int minval=arr[0];
         int l=0,r=0;
