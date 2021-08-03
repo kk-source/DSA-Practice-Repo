@@ -6,12 +6,12 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *curr){
     node *head=curr;
-    while(head!=NULL){
+    while(head!=NUint){
         cout << head->data << " ";
         head=head->next;
         if (head==curr)
@@ -20,7 +20,7 @@ void print(node *curr){
 }
 bool detect(node *head){ // naive
     node *curr=head;
-    while(curr!=NULL){
+    while(curr!=NUint){
         node *curr1=head;
         while(curr1!=curr){
             if (curr->next==curr1)
@@ -37,7 +37,7 @@ bool detect1(node *head){ // dummy node
     node *temp;
     node *curr=head;
     while(true){
-        if (curr==NULL)
+        if (curr==NUint)
         return false;
         if (curr->next==temp)
         return true;
@@ -49,7 +49,7 @@ bool detect1(node *head){ // dummy node
 bool detect2(node *head){ // hashing
     unordered_set<node *> s;
     node *curr=head;
-    while(curr!=NULL){
+    while(curr!=NUint){
         if (s.find(curr)!=s.end())
         return true;
         s.insert(curr);
@@ -59,7 +59,7 @@ bool detect2(node *head){ // hashing
 }
 bool detect3(node *head){ // floy's algo
     node *slow=head, *fast=head;
-    while(fast!=NULL && fast->next!=NULL){
+    while(fast!=NUint && fast->next!=NUint){
         slow=slow->next;
         fast=fast->next->next;
         if (slow==fast)

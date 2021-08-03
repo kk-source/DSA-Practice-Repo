@@ -5,18 +5,18 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *head){
-    while(head!=NULL){
+    while(head!=NUint){
         cout << head->data << " ";
         head=head->next;
     }
 }
 node *rev(node *head){
-    node *prev=NULL, *curr=head;
-    while(curr!=NULL){
+    node *prev=NUint, *curr=head;
+    while(curr!=NUint){
         node *next=curr->next;
         curr->next=prev;
         prev=curr;
@@ -25,16 +25,16 @@ node *rev(node *head){
     return prev;
 }
 // bool palin(node *head){
-//     if (head==NULL)
+//     if (head==NUint)
 //     return true;
 //     node *slow=head,*fast=head;
-//     while(fast->next!=NULL && fast->next->next!=NULL){
+//     while(fast->next!=NUint && fast->next->next!=NUint){
 //         slow=slow->next;
 //         fast=fast->next->next;
 //     }
 //     node *temp=rev(slow->next);
 //     fast=head;
-//     while(temp!=NULL){
+//     while(temp!=NUint){
 //         if (fast->data!=temp->data)
 //         return false;
 //         fast=fast->next;
@@ -44,15 +44,15 @@ node *rev(node *head){
 //     return true;
 // }
 bool palin(node *head){
-        if(head==NULL)return true;
+        if(head==NUint)return true;
         node *slow=head,*fast=head;
-        while(fast->next!=NULL&&fast->next->next!=NULL){
+        while(fast->next!=NUint&&fast->next->next!=NUint){
             slow=slow->next;
             fast=fast->next->next;
         }
         node *temp=rev(slow->next);
         node *curr=head;
-        while(temp!=NULL){
+        while(temp!=NUint){
             if(temp->data!=curr->data)
                 return false;
             temp=temp->next;

@@ -6,21 +6,21 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *head){
-    while(head!=NULL){
+    while(head!=NUint){
         cout << head->data << " ";
         head=head->next;
     }
 }
 void removeDup(node *head){
-    if (head==NULL || head->next==NULL)
+    if (head==NUint || head->next==NUint)
     // return head;
     return;
     node *curr=head->next, *prev=head;
-    while(curr!=NULL){
+    while(curr!=NUint){
     if (curr->data==prev->data){
         node *temp=curr;
         curr=curr->next;
@@ -35,11 +35,11 @@ void removeDup(node *head){
     // return head;
 }
 void removeDup1(node *head){
-    if (head==NULL || head->next==NULL)
+    if (head==NUint || head->next==NUint)
     // return head;
     return;
     node *curr=head;
-    while(curr->next!=NULL){
+    while(curr->next!=NUint){
         if (curr->data==curr->next->data){
             node *temp=curr->next;
             curr->next=curr->next->next;

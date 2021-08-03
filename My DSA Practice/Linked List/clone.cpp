@@ -8,7 +8,7 @@ struct node
     node(int x) 
     { 
         data = x; 
-        next = random = NULL; 
+        next = random = NUint; 
     } 
 }; 
 
@@ -27,10 +27,10 @@ void print(node *start)
 node* clone(node *head) 
 { 
     unordered_map<node*,node*> hm;
-    for(node *curr=head;curr!=NULL;curr=curr->next)
+    for(node *curr=head;curr!=NUint;curr=curr->next)
         hm[curr]=new node(curr->data);
     
-    for(node *curr=head;curr!=NULL;curr=curr->next){
+    for(node *curr=head;curr!=NUint;curr=curr->next){
         node *cloneCurr=hm[curr];
         cloneCurr->next=hm[curr->next];
         cloneCurr->random=hm[curr->random];
@@ -42,19 +42,19 @@ node* clone(node *head)
 
 node* clone1(node *head){
     // inserting clone elements in between.
-    for (node *curr=head; curr!=NULL;){
+    for (node *curr=head; curr!=NUint;){
         node *next=curr->next;
         curr->next=new node(curr->data);
         curr->next->next=next;
         curr=next;
     }
     // defining random pointers.
-    for (node *curr=head; curr!=NULL;curr=curr->next->next)
-        curr->next->random=(curr->random!=NULL)? curr->random->next:NULL;
+    for (node *curr=head; curr!=NUint;curr=curr->next->next)
+        curr->next->random=(curr->random!=NUint)? curr->random->next:NUint;
     
     node *head2=head->next;
     node *head1=head;
-    for (node *curr=head; curr->next!=NULL;){
+    for (node *curr=head; curr->next!=NUint;){
         
         node *next=curr->next;
         curr->next=next->next;

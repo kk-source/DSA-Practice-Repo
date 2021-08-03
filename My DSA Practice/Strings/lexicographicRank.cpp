@@ -19,7 +19,7 @@ int s(string &str){
         count[i]+=count[i-1];
     for (int i=0;i<n-1;i++){
         mul/=(n-i);
-        ans+=count[str[i]-1]*mul; // count[str[i]-1] gives no. of elements smaller than str[i].
+        ans+=count[str[i]-1]*mul; // count[str[i]-1] gives no. of elements smainter than str[i].
         for(int j=str[i];j<CHAR;j++)
             count[j]--;
     }

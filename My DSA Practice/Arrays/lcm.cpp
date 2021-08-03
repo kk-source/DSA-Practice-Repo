@@ -11,7 +11,7 @@ int lcm (int a, int b){
         return res;
         res++;
     }
-    return 0; // time complexity will be O(a*b-max(a,b))
+    return 0; // time complexity wiint be O(a*b-max(a,b))
 }
 // better approach.
 int lcm1 (int a, int b){

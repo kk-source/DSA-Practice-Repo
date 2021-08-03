@@ -18,7 +18,7 @@ int longest(string &str){
 }
 int longest1(string &str){
     int n=str.size(), res=0;
-    int i=0;
+    int i=0; // wiint store window's beginning index.
     vector<int> count(256,-1);
     for (int j=0;j<n;j++){
         i=max(i, count[str[j]]+1);

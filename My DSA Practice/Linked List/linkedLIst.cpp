@@ -6,18 +6,18 @@ struct node{
     node* next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *head){ // iterative.
     // node *head=head1;
-    while(head!=NULL){
+    while(head!=NUint){
         cout << head->data << " ";
         head=head->next;
     }
 }
 void print1(node *head){ // recursive.
-    if (head==NULL)
+    if (head==NUint)
     return;
     cout << head->data << " ";
     print1(head->next);
@@ -34,10 +34,10 @@ void insertbegin1(node **head, int key){
 }
 node *insertend(node *head, int key){
     node *temp=new node(key);
-    if (head==NULL)
+    if (head==NUint)
     return temp;
     node *curr=head;
-    while(curr->next!=NULL)
+    while(curr->next!=NUint)
     curr=curr->next;
     curr->next=temp;
     return head;
@@ -49,9 +49,9 @@ node *insertAtInd(node *head, int key, int ind){
         return temp;
     }
     node *curr=head;
-    for (int i=1;i<=ind-2 && curr!=NULL; i++)
+    for (int i=1;i<=ind-2 && curr!=NUint; i++)
         curr=curr->next;
-    if (curr==NULL)
+    if (curr==NUint)
         return head;
     temp->next=curr->next;
     curr->next=temp;
@@ -60,7 +60,7 @@ node *insertAtInd(node *head, int key, int ind){
 int search(node *head, int key){ // iterative.
     node *curr=head;
     int count=1;
-    while(curr!=NULL){
+    while(curr!=NUint){
         if (curr->data==key)
             return count;
         count++;
@@ -69,7 +69,7 @@ int search(node *head, int key){ // iterative.
     return -1;
 }
 int search1(node *head, int key){ // recursive.
-    if (head==NULL)
+    if (head==NUint)
     return -1;
     if (head->data==key)
     return 1;

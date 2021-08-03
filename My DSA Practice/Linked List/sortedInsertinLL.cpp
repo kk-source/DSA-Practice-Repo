@@ -6,25 +6,25 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 void print(node *head){
-    while(head!=NULL){
+    while(head!=NUint){
         cout << head->data << " ";
         head=head->next;
     }
 }
 node *sortedInsert(node *head, int key){
     node *temp=new node(key);
-    if (head==NULL)
+    if (head==NUint)
         return temp;
     if (key<head->data){
         temp->next=head;
         return temp;
     }
     node *curr=head;
-    while(curr->next!=NULL && key>curr->next->data)
+    while(curr->next!=NUint && key>curr->next->data)
         curr=curr->next;
 
     temp->next=curr->next;

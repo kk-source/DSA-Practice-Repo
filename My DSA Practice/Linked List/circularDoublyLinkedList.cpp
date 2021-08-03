@@ -6,12 +6,12 @@ struct node {
     node *next, *prev;
     node (int x){
         data=x;
-        next=NULL;
-        prev=NULL;
+        next=NUint;
+        prev=NUint;
     }
 };
 void print(node *head){
-    if (head==NULL)
+    if (head==NUint)
     return ;
     node *curr=head;
     do{
@@ -21,7 +21,7 @@ void print(node *head){
 }
 node *insertbegin(node *head, int key){ 
     node *temp=new node(key);
-    if (head==NULL){
+    if (head==NUint){
         temp->next=temp;
         temp->prev=temp;
         return temp;
@@ -34,7 +34,7 @@ node *insertbegin(node *head, int key){
 }
 node *insertend(node *head, int key){ // same as above.
     node *temp=new node(key);
-    if (head==NULL){
+    if (head==NUint){
         temp->next=temp;
         temp->prev=temp;
         return head;

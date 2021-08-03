@@ -14,7 +14,7 @@ int minpages(int arr[], int n, int k){ // naive.
     if (n==1)
         return arr[0];
 
-    int res=INT_MAX;
+    int res=int_MAX;
     for (int i=1;i<n;i++){
         // res=min(res,max(minpages(arr,i,k-1),sum(arr,i,n-1)));
         res=min(res,max(sum(arr,0,i-1),minpages(arr+i,n-i,k-1)));
@@ -28,7 +28,7 @@ int minpages1(int arr[], int n, int k){
         high+=arr[i];
         low=max(low,arr[i]);
     }
-    int ans=INT_MAX;
+    int ans=int_MAX;
     while(low<=high){
         int mid=(low+high)/2;
         int count=1, sum=0;

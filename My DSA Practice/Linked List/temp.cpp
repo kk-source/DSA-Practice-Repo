@@ -1,96 +1,73 @@
 #include <iostream>
 #include <string>
 using namespace std;
-struct node{
-    int data;
-    node *next;
-    node(int x){
-        data=x;
-        next=NULL;
+
+struct Node{
+    int key, value;
+    Node *prev, *next;
+    Node(int x, int y){
+        key=x;
+        value=y;
+        prev=next=NULL;
     }
 };
-void print(node *head){
-    while(head!=NULL){
-        cout << head->data << " ";
-        head=head->next;
+class LRUCache
+{
+    private:
+    int size;
+    int curr;
+    Node *head, *tail;
+    unordered_map<int, Node*> mp;
+    public:
+    //Constructor for initializing the cache capacity with the given value.
+    LRUCache(int cap)
+    {
+        size=cap;
+        curr=0;
+        head=new Node(0, 0);
+        tail=new Node(0, 0);
+        head->next=tail;
+        tail->prev=head;
     }
-}
-node *rev(node *head){
-    node *prev=NULL;
-    while(head!=NULL){
-        node *next=head->next;
-        head->next=prev;
-        prev=head;
-        head=next;
+    
+    //Function to return value corresponding to the key.
+    int get(int key)
+    {
+        if (mp.find(key)==mp.end())
+        return -1;
+        Node *temp=mp[key];
+        temp->next->prev=temp->prev;
+        temp->prev->next=temp->next;
+        temp->next=head->next;
+        temp->prev=head;
+        head->next=temp;
+        return temp->value;
     }
-    return prev;
-}
-node* addSameSize(node* head1, node* head2) 
-{ 
-	head1=rev(head1);
-	head2=rev(head2);
-	int val=(head1->data+head2->data);
-	node *head=new node(val%10);
-	node *curr=head;
-	val/=10;
-	head1=head1->next;
-	head2=head2->next;
-	while(head1!=NULL && head2!=NULL){
-	    val+=(head1->data+head2->data);
-	    node *temp=new node (val%10);
-	    curr->next=temp;
-	    curr=curr->next;
-	    val/=10;
-	    head1=head1->next;
-	    head2=head2->next;
-	}
-	while (head1!=NULL){
-	    val+=head1->data;
-	    node *temp=new node(val%10);
-	    curr->next=temp;
-	    curr=curr->next;
-	    val/=10;
-	    head1=head1->next;
-	}
-	while (head2!=NULL){
-	    val+=head2->data;
-	    node *temp=new node(val%10);
-	    curr->next=temp;
-	    curr=curr->next;
-	    val/=10;
-	    head2=head2->next;
-	}
-	head=rev(head);
-	return head;
-} 
+    
+    //Function for storing key-value pair.
+    void set(int key, int value)
+    {
+        if (mp.find(key)!=mp.end())
+        return;
+        Node *temp;
+        if (curr==size){
+            temp=tail->prev;
+            mp.erase(temp->key);
+            temp->prev->next=tail;
+            tail->prev=temp->prev;
+            delete temp;
+        }
+        temp=new Node(key, value);
+        mp[key]=temp;
+        temp->next=head->next;
+        temp->next->prev=temp;
+        head->next=temp;
+        temp->prev=head;
+        curr+=(curr==size)? 0:1;
+    }
+};
 int main(){
-    node *head=new node(3);
-    node *curr=head;
-    // head->next=new node(5);
-    // head->next->next=new node(2); 
-    // head->next->next->next=new node(4);
-    // head->next->next->next->next=new node(1);
-    // head->next->next->next->next->next=new node(0);
-    // head->next->next->next->next->next->next=new node(2);
-    // head->next->next->next->next->next->next->next=new node(2);
-    // head->next->next->next->next=new node(5);
-    // for (int i=0;i<76;i++){
-    //     int n;
-    //     cin >> n;
-    //     node *temp=new node(n);
-    //     curr->next=temp;
-    //     curr=curr->next;
-    // }
-    // node *head1=new node(3);
-    // curr=head1;
-    // for (int i=0;i<19;i++){
-    //     int n;
-    //     cin >> n;
-    //     node *temp=new node(n);
-    //     curr->next=temp;
-    //     curr=curr->next;
-    // }
-    // head=addSameSize(head, head1);
-    // print(head);
+    
+
     return 0;
 }

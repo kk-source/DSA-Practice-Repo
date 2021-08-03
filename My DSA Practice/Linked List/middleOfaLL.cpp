@@ -6,15 +6,15 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NULL;
+        next=NUint;
     }
 };
 int mid(node *head){
-    if (head==NULL)
+    if (head==NUint)
     return 0;
     int count=1;
     node *curr=head;
-    while(curr->next!=NULL){
+    while(curr->next!=NUint){
         curr=curr->next;
         count++;
     }
@@ -25,9 +25,9 @@ int mid(node *head){
     return curr->data;
 }
 void mid1(node *head){// better.
-    if (head==NULL) return;
+    if (head==NUint) return;
     node *slow=head, *fast=head;
-    while(fast!=NULL && fast->next!=NULL){
+    while(fast!=NUint && fast->next!=NUint){
         slow=slow->next;
         fast=fast->next->next;
     }
