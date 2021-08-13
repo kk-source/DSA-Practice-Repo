@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+typedef long long ll;
 bool Isprime(ll n){
     for (ll i=2;i<n;i++){
         if (n%i==0)
@@ -32,7 +32,7 @@ bool Isprime2(ll n){
     }
     return true;
 }
-ll main(){
+int main(){
     cout << Isprime2(1031);
     return 0;
 }
