@@ -7,21 +7,21 @@ struct Node
   struct Node *right; 
   Node(int k){
       data=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 int height(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     return 1+max(height(root->left), height(root->right));
 }
 void fun(Node *root, int k, bool ans[], int *temp, int ind, int &res){
-    if (root==NUint)
+    if (root==NULL)
     return;
     temp[ind]=root->data;
     ans[ind]=false; // do dry run for below test case.
     cout << root->data << " " << ans[ind] << endl;
-    if (root->left==NUint && root->right==NUint && ind-k>=0 && ans[ind-k]==false){
+    if (root->left==NULL && root->right==NULL && ind-k>=0 && ans[ind-k]==false){
             res++;
             ans[ind-k]=true;
             return;
@@ -31,7 +31,7 @@ void fun(Node *root, int k, bool ans[], int *temp, int ind, int &res){
 }
 int printKDistantfromLeaf(Node* root, int k)
 {
-    if (root==NUint || k<0)
+    if (root==NULL || k<0)
     return 0;
 	int h=height(root);
     int *arr=new int[h];
@@ -43,10 +43,10 @@ int printKDistantfromLeaf(Node* root, int k)
 // Using set.
 /* 
 void fun(Node *root, int k, unordered_set<Node *> &ans, Node **temp, int ind){
-    if (root==NUint)
+    if (root==NULL)
     return;
     temp[ind]=root;
-    if (root->left==NUint && root->right==NUint && ind-k>=0 && ans.find(temp[ind-k])==ans.end()){
+    if (root->left==NULL && root->right==NULL && ind-k>=0 && ans.find(temp[ind-k])==ans.end()){
             ans.insert(temp[ind-k]);
             return;
     }
@@ -55,7 +55,7 @@ void fun(Node *root, int k, unordered_set<Node *> &ans, Node **temp, int ind){
 }
 int printKDistantfromLeaf(Node* root, int k)
 {
-    if (root==NUint || k<0)
+    if (root==NULL || k<0)
     return 0;
 	int h=height(root);
     Node **arr=new Node*[h];

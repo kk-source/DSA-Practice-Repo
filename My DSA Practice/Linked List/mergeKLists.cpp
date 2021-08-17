@@ -6,11 +6,11 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }
@@ -27,7 +27,7 @@ node *merge(node *head1, node *head2){
             curr=head2; // or curr=head;
             head2=head2->next;
         }
-        while(head1!=NUint && head2!=NUint){
+        while(head1!=NULL && head2!=NULL){
             if (head1->data<=head2->data){
                 curr->next=head1;
                 head1=head1->next;
@@ -39,10 +39,10 @@ node *merge(node *head1, node *head2){
                 curr=curr->next;
             }
         }
-        if (head1==NUint){
+        if (head1==NULL){
             curr->next=head2;
         }
-        if (head2==NUint){
+        if (head2==NULL){
             curr->next=head1;
         }
         return head;

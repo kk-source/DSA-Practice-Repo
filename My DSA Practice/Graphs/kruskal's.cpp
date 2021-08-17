@@ -93,17 +93,17 @@ int myComp(const void* a, const void* b)
 void KruskalMST(Graph* graph) 
 { 
 	int V = graph->V; 
-	Edge result[V]; // Tnis wiint store the resultant MST 
+	Edge result[V]; // Tnis will store the resultant MST 
 	int e = 0; // An index variable, used for result[] 
 	int i = 0; // An index variable, used for sorted edges 
 
-	// Step 1: Sort aint the edges in non-decreasing 
-	// order of their weight. If we are not aintowed to 
+	// Step 1: Sort all the edges in non-decreasing 
+	// order of their weight. If we are not allowed to 
 	// change the given graph, we can create a copy of 
 	// array of edges 
 	qsort(graph->edge, graph->E, sizeof(graph->edge[0]), myComp); 
 
-	// Aintocate memory for creating V ssubsets 
+	// Allocate memory for creating V ssubsets 
 	subset *subsets = new subset[( V * sizeof(subset) )]; 
 
 	// Create V subsets with single elements 
@@ -117,7 +117,7 @@ void KruskalMST(Graph* graph)
 	// Number of edges to be taken is equal to V-1 
 	while (e < V - 1 && i < graph->E) 
 	{ 
-		// Step 2: Pick the smaintest edge. And increment 
+		// Step 2: Pick the smallest edge. And increment 
 		// the index for next iteration 
 		Edge next_edge = graph->edge[i++]; 
 

@@ -34,7 +34,7 @@ Node *insert(int arr[], int n, int i=0){
     return head;
 }
 // efficient.
-int KthSmaintest(Node *root, int k){
+int KthSmallest(Node *root, int k){
     if (root==NULL)
     return INT_MIN;
 
@@ -42,15 +42,15 @@ int KthSmaintest(Node *root, int k){
     if (c==k)
     return root->data;
     else if (c>k)
-    return KthSmaintest(root->left, k);
+    return KthSmallest(root->left, k);
     else
-    return KthSmaintest(root->right, k-c);
+    return KthSmallest(root->right, k-c);
 }
 // NAIVE.
 // void printKth(Node *root, int k, int &count){
 //     if(root!=NULL){
 //         printKth(root->left,k,count);
-//         count++; // count++ is here because above line wiint be taken by NULL first.
+//         count++; // count++ is here because above line will be taken by NULL first.
 //         if(count==k)
 //             {cout<<root->data; return;}
 //         printKth(root->right,k,count);
@@ -75,6 +75,6 @@ int main() {
     Node *root=insert(arr, n);
     inOrder(root);
     cout << endl;
-    cout << KthSmaintest(arr, n, 3);
+    cout << KthSmallest(arr, n, 3);
 	return 0;
 }

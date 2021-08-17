@@ -76,7 +76,7 @@ int main()
 
 	int x = 5;
 
-	// Cainting required function
+	// Calling required function
 	if (existsPair(root, x))
 		cout << "Yes";
 	else

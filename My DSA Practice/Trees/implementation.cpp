@@ -6,25 +6,25 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 void preorder(Node *root){
-    if (root!=NUint){
+    if (root!=NULL){
         cout << root->key << " ";
         preorder(root->left);
         preorder(root->right);
     }
 }
 void inorder(Node *root){
-    if (root!=NUint){
+    if (root!=NULL){
         inorder(root->left);
         cout << root->key << " ";
         inorder(root->right);
     }
 }
 void postorder(Node *root){
-    if (root!=NUint){
+    if (root!=NULL){
         postorder(root->left);
         postorder(root->right);
         cout << root->key << " ";

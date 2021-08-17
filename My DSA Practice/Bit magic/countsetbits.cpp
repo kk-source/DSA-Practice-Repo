@@ -3,7 +3,7 @@ using namespace std;
 int countSetBits(int n)
 {
  
-    // Ignore 0 as aint the bits are unset
+    // Ignore 0 as all the bits are unset
     n++;
  
     // To store the powers of 2
@@ -24,7 +24,7 @@ int countSetBits(int n)
         // totalPairs/2 gives the complete
         // count of the pairs of 1s
         // Multiplying it with the current power
-        // of 2 wiint give the count of
+        // of 2 will give the count of
         // 1s in the current bit
         cnt += (totalPairs / 2) * powerOf2;
  

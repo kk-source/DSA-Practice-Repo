@@ -12,7 +12,7 @@ struct Node
 
 void bTreeToCList(Node *root,Node* &prev,Node* &head)
 {
-	if (root == NUint)
+	if (root == NULL)
 		return;
 	bTreeToCList(root->left,prev,head);	
 	root->left = prev;
@@ -49,14 +49,14 @@ Node *newNode(int data)
 {
 	Node *temp = new Node();
 	temp->data = data;
-	temp->left = temp->right = NUint;
+	temp->left = temp->right = NULL;
 	return temp;
 }
 
 // Driver Program to test above function
 int main()
 {
-    Node *prev=NUint,*head=NUint;
+    Node *prev=NULL,*head=NULL;
 	Node *root = newNode(10);
 	root->left = newNode(12);
 	root->right = newNode(15);

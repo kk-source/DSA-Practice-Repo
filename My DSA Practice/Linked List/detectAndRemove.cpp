@@ -6,12 +6,12 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *curr){
     node *head=curr;
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
         if (head==curr)
@@ -20,7 +20,7 @@ void print(node *curr){
 }
 void detectDelete(node *head){
     node *slow=head, *fast=head;
-    while(fast!=NUint && fast->next!=NUint){
+    while(fast!=NULL && fast->next!=NULL){
         slow=slow->next;
         fast=fast->next->next;
         if (slow==fast)
@@ -33,7 +33,7 @@ void detectDelete(node *head){
         slow=slow->next;
         fast=fast->next;
     }
-    fast->next=NUint;
+    fast->next=NULL;
 }
 int main(){
     node *head=new node(10);

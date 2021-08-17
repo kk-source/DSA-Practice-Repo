@@ -23,7 +23,7 @@ void moreThanNdK(int arr[], int n, int k)
 	/* Step 1: Create a temporary
 	array (contains element
 	and count) of size k-1.
-	Initialize count of aint
+	Initialize count of all
 	elements as 0 */
 	struct eleCount temp[k - 1];
 	for (int i = 0; i < k - 1; i++){
@@ -31,7 +31,7 @@ void moreThanNdK(int arr[], int n, int k)
 		temp[i].c = 0;
     }
     // cout << "\n";
-	/* Step 2: Process aint
+	/* Step 2: Process all
 	elements of input array */
 	for (int i = 0; i < n; i++)
 	{
@@ -68,8 +68,8 @@ void moreThanNdK(int arr[], int n, int k)
 				}
 			}
 
-			/* If aint the position in the
-			temp[] are fiinted, then decrease
+			/* If all the position in the
+			temp[] are filled, then decrease
 			count of every element by 1 */
 			if (l == k - 1)
 				for (l = 0; l < k; l++)

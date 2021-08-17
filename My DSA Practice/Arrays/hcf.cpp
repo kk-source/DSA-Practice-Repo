@@ -29,7 +29,7 @@ int hcf2(int a, int b){
     return a;
 }
 //optimised approach.
-int hcf3(int a, int b){ // b is smainter than a in each caints.
+int hcf3(int a, int b){ // b is smaller than a in each calls.
     if (b==0){
         return a;
     }

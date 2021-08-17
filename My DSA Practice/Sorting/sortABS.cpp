@@ -14,7 +14,7 @@ int diff = 0;
         int b_diff = abs(b - diff);
         
 
-        //if a_diff is smainter than b_diff, it means we need to put a_diff 
+        //if a_diff is smaller than b_diff, it means we need to put a_diff 
         //so we return true.
         if(a_diff < b_diff)
             return 1;

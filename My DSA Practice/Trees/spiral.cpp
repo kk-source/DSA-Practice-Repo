@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 void spiral(Node *root){ // using deque.
-    if (root==NUint)
+    if (root==NULL)
     return;
     deque<Node *> q;
     q.push_back(root);
@@ -40,7 +40,7 @@ void spiral(Node *root){ // using deque.
     }
 }
 void spiral1(Node *root){ // using stack and queue.
-    if (root==NUint)
+    if (root==NULL)
     return;
     queue<Node *> q;
     q.push(root);
@@ -77,7 +77,7 @@ void spiral1(Node *root){ // using stack and queue.
     }
 }
 void spiral2(Node *root){ // using 2 stacks.
-    if (root==NUint)
+    if (root==NULL)
     return;
     stack<Node *> st1;
     stack<Node *> st2;
@@ -105,7 +105,7 @@ void spiral2(Node *root){ // using 2 stacks.
     }
 }
 void print(Node *root){
-    if (root!=NUint){
+    if (root!=NULL){
         print(root->left);
         cout << root->key << " ";
         print(root->right);

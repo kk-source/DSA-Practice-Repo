@@ -5,12 +5,12 @@ struct Node{
     Node *left, *right;
     Node (int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 Node *dl(int in[], int pre[], int is, int ie){ // O(n^2).
     if (is>ie)
-    return NUint;
+    return NULL;
     static int preIndex=0;
     Node *root=new Node(pre[preIndex++]);
     int inIndex;
@@ -26,7 +26,7 @@ Node *dl(int in[], int pre[], int is, int ie){ // O(n^2).
 }
 Node *dl1(int in[], int pre[], int is, int ie, unordered_map<int, int> &mp){ // O(n).
     if (is>ie)
-    return NUint;
+    return NULL;
     static int preIndex=0;
     Node *root=new Node(pre[preIndex++]);
     int inIndex=mp[root->key];
@@ -35,7 +35,7 @@ Node *dl1(int in[], int pre[], int is, int ie, unordered_map<int, int> &mp){ // 
     return root;
 }
 void print(Node *root){
-    if (root!=NUint){
+    if (root!=NULL){
         print(root->left);
         cout << root->key << " ";
         print(root->right);

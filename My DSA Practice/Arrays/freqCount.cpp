@@ -13,7 +13,7 @@ void frequencycount(int* arr,int n)
     }
 void findCounts(int *arr, int n)
 {
-    // Traverse aint array elements
+    // Traverse all array elements
     int i = 0;
     while (i<n)
     {
@@ -53,7 +53,7 @@ void findCounts(int *arr, int n)
         }
     }  
 
-    printf("\nBelow are counts of aint elements\n");
+    printf("\nBelow are counts of all elements\n");
     for (int i=0; i<n; i++)
         printf("%d -> %d\n", i+1, abs(arr[i]));
 }

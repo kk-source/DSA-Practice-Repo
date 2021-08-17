@@ -6,18 +6,18 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }
 }
 void segEvenOdd(node *head){ // naive.
     node *prev=head, *curr=head;
-    while(curr!=NUint){
+    while(curr!=NULL){
         if (curr->data%2==0){
             int temp=prev->data;
             prev->data=curr->data;
@@ -32,11 +32,11 @@ void segEvenOdd(node *head){ // naive.
     }
 }
 node *segEvenOdd1(node *head){ // recursive.
-    node *eS=NUint, *eE=NUint, *oS=NUint, *oE=NUint;
-    for (node *curr=head;curr!=NUint;curr=curr->next){
+    node *eS=NULL, *eE=NULL, *oS=NULL, *oE=NULL;
+    for (node *curr=head;curr!=NULL;curr=curr->next){
         int x=curr->data;
         if (x%2==0){
-            if (eS==NUint){
+            if (eS==NULL){
                 eS=curr;
                 eE=curr;
             }
@@ -46,7 +46,7 @@ node *segEvenOdd1(node *head){ // recursive.
             }
         }
         else{
-            if (oS==NUint){
+            if (oS==NULL){
                 oS=curr;
                 oE=curr;
             }
@@ -56,10 +56,10 @@ node *segEvenOdd1(node *head){ // recursive.
             }
         }
     }
-    if (oS==NUint || eS==NUint)
+    if (oS==NULL || eS==NULL)
     return head;
     eE->next=oS;
-    oE->next=NUint;
+    oE->next=NULL;
     return eS;
 }
 int main(){

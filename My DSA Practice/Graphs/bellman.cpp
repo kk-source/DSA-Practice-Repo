@@ -25,14 +25,14 @@ void printArr(int dist[], int n)
 		printf("%d \t\t %d\n", i, dist[i]); 
 } 
 
-void BeintmanFord(struct Graph* graph, int src) 
+void BellmanFord(struct Graph* graph, int src) 
 { 
 	int V = graph->V; 
 	int E = graph->E; 
 	int dist[V]; 
 
 	for (int i = 0; i < V; i++) 
-		dist[i] = int_MAX; 
+		dist[i] = INT_MAX; 
 	dist[src] = 0; 
 
 	for (int i = 1; i <= V - 1; i++) { 
@@ -40,7 +40,7 @@ void BeintmanFord(struct Graph* graph, int src)
 			int u = graph->edge[j].src; 
 			int v = graph->edge[j].dest; 
 			int weight = graph->edge[j].weight; 
-			if (dist[u] != int_MAX && dist[u] + weight < dist[v]) 
+			if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) 
 				dist[v] = dist[u] + weight; 
 		} 
 	} 
@@ -91,7 +91,7 @@ int main()
 	graph->edge[4].dest = 3; 
 	graph->edge[4].weight = 3; 
 
-	BeintmanFord(graph, 0); 
+	BellmanFord(graph, 0); 
 
 	return 0; 
 } 

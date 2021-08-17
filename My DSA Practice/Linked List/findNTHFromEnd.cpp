@@ -6,11 +6,11 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }
@@ -18,7 +18,7 @@ void print(node *head){
 void noFromEnd(node *head, int k){
     int count=1, ans=-1;
     node *curr=head;
-    while(curr!=NUint){
+    while(curr!=NULL){
         if (count>=n){
             ans=head->data;
             head=head->next;

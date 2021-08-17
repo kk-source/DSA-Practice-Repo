@@ -6,7 +6,7 @@ const int MAX = 100;
 
 	int median(vector<vector<int>> &matrix, int r, int c)
     {
-        int min = int_MAX, max = int_MIN;
+        int min = INT_MAX, max = INT_MIN;
         for (int i = 0; i < r; i++)
         {
             if (matrix[i][0] < min)

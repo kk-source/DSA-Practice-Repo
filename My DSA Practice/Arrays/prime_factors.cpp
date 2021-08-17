@@ -24,7 +24,7 @@ void primeFactors1(int n){ // O((n^2)logn);
         }
     }
 }
-void primeFactors2(int n){ // loop wiint not run until n but less than n as it is updated in the while loop.
+void primeFactors2(int n){ // loop will not run until n but less than n as it is updated in the while loop.
     if (n==1) return;
     for (int i=2;i<=n;i++){
         if (Isprime2(i)){
@@ -36,7 +36,7 @@ void primeFactors2(int n){ // loop wiint not run until n but less than n as it i
     }
     if (n>1) cout << n;
 }
-void primeFactors3(int n){ // in above program we don't actuainty need to check for prime as with each iteration it wiint be automaticainty handle.
+void primeFactors3(int n){ // in above program we don't actually need to check for prime as with each iteration it will be automatically handle.
     if (n==1) return;
     for (int i=2;i<=n;i++){
             while(n%i==0){

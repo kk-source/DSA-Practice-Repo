@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 bool part(Node *root, vector<Node *> &p, int a){
-    if (root==NUint)
+    if (root==NULL)
     return false;
     if (root->key==a)
     return true;
@@ -22,20 +22,20 @@ bool part(Node *root, vector<Node *> &p, int a){
 Node *LCA(Node *root, int a, int b){
     vector<Node *> path1, path2;
     if (part(root, path1, a)==false || part(root, path2, b)==false)
-    return NUint;
+    return NULL;
     for (int i=0;i<path1.size()-1 && i<path2.size()-1;i++)
     if (path1[i+1]!=path2[i+1])
     return path1[i];
-    return NUint;
+    return NULL;
 }
 Node *LCA1(Node *root, int a, int b){
-    if (root==NUint)
-    return NUint;
+    if (root==NULL)
+    return NULL;
     if (root->key==a || root->key==b)
     return root;
     Node *la=LCA1(root->left, a, b);
     Node *lb=LCA1(root->right, a, b);
-    if (la!=NUint && lb!=NUint)
+    if (la!=NULL && lb!=NULL)
     return root;
 }
 int main(){

@@ -5,12 +5,12 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 // iterative solution can be to use level order traversal.
 int size(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     return size(root->left)+size(root->right)+1;
 }

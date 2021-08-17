@@ -5,30 +5,30 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }
 }
 void pairwise(node *head){
     node *curr=head;
-    while(curr!=NUint && curr->next!=NUint){
+    while(curr!=NULL && curr->next!=NULL){
         swap(curr->data, curr->next->data);
         curr=curr->next->next;
     }
 }
 node *pairwiseSwap(node *head){ // better.
-    if(head==NUint||head->next==NUint)
+    if(head==NULL||head->next==NULL)
         return head;
     node *curr=head->next->next;
     node *prev=head;
     head=head->next;
     head->next=prev;
-    while(curr!=NUint&&curr->next!=NUint){
+    while(curr!=NULL&&curr->next!=NULL){
         prev->next=curr->next;
         prev=curr;
         node *next=curr->next->next;

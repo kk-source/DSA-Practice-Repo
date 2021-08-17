@@ -6,38 +6,38 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }
 }
 node *rev(node *head, int k){ // recursive.
-    node *curr=head, *prev=NUint, *next=NUint;
+    node *curr=head, *prev=NULL, *next=NULL;
     int count=0;
-    while(curr!=NUint && count<k){
+    while(curr!=NULL && count<k){
         next=curr->next;
         curr->next=prev;
         prev=curr;
         curr=next;
         count++;
     }
-    if (next!=NUint){
+    if (next!=NULL){
         node *rest_head=rev(next, k);
         head->next=rest_head;
     }
     return prev;
 }
 node *rev1(node *head, int k){ // iterative.
-    node *curr=head, *prevfirst=NUint;
+    node *curr=head, *prevfirst=NULL;
     bool flag=true;
-    while(curr!=NUint){
-        node *first=curr, *prev=NUint;
+    while(curr!=NULL){
+        node *first=curr, *prev=NULL;
         int count=0;
-        while(curr!=NUint && count<k){
+        while(curr!=NULL && count<k){
             node *next=curr->next;
             curr->next=prev;
             prev=curr;

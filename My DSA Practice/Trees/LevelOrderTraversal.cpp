@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 void BFT(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return;
     queue<Node *> q;
     q.push(root);
@@ -24,17 +24,17 @@ void BFT(Node *root){
     }
 }
 void BFT1(Node *root){ // line by line
-    if (root==NUint)
+    if (root==NULL)
     return;
     queue<Node *> q;
     q.push(root);
-    q.push(NUint);
+    q.push(NULL);
     while(q.size()!=1){
         Node *curr=q.front();
         q.pop();
-        if (curr==NUint){
+        if (curr==NULL){
             cout << endl;
-            q.push(NUint);
+            q.push(NULL);
             continue;
         }
         cout << curr->key << " ";
@@ -45,7 +45,7 @@ void BFT1(Node *root){ // line by line
     }
 }
 void BFT2(Node *root){ // line by line
-    if (root==NUint)
+    if (root==NULL)
     return;
     queue<Node *> q;
     q.push(root);

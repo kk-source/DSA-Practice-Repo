@@ -22,19 +22,19 @@ class minHeap{
     void insert(int x);
     void minHeapify(int i){
         int lt=left(i), rt=right(i);
-        int smaintest=i;
-        if (lt<size && arr[lt]<arr[smaintest])
-        smaintest=lt;
-        if (rt<size && arr[rt]<arr[smaintest])
-        smaintest=rt;
-        if (smaintest!=i){
-            swap(arr[i], arr[smaintest]);
-            minHeapify(smaintest);
+        int smallest=i;
+        if (lt<size && arr[lt]<arr[smallest])
+        smallest=lt;
+        if (rt<size && arr[rt]<arr[smallest])
+        smallest=rt;
+        if (smallest!=i){
+            swap(arr[i], arr[smallest]);
+            minHeapify(smallest);
         }
     }
     int extractMin(){
         if (size==0)
-        return int_MAX;
+        return INT_MAX;
         // if (size==1){
         //     size--;
         //     return arr[0];

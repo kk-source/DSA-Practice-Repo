@@ -6,7 +6,7 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 /* for doubly linked list.
@@ -22,7 +22,7 @@ struct node{
         curr=head;
         head2=head2->next;
     }
-    while(head1!=NUint && head2!=NUint){
+    while(head1!=NULL && head2!=NULL){
         if (head1->data<=head2->data){
             
         curr->next=head1;
@@ -37,12 +37,12 @@ struct node{
         head2=head2->next;
     }
     }
-    if (head1==NUint){
+    if (head1==NULL){
         curr->next=head2;
         curr->next->prev=curr;
         curr=curr->next;
     }
-    if (head2==NUint){
+    if (head2==NULL){
         curr->next=head1;
         curr->next->prev=curr;
         curr=curr->next;
@@ -51,18 +51,18 @@ struct node{
 }
 struct node *sortDoubly(struct node *head)
 {
-	if (head->next==NUint)
+	if (head->next==NULL)
 	return head;
 	node *slow=head, *fast=head;
-	while(fast->next!=NUint && fast->next->next!=NUint){
+	while(fast->next!=NULL && fast->next->next!=NULL){
 	    slow=slow->next;
 	    fast=fast->next->next;
 	    if (slow==fast)
 	    break;
 	}
-	slow->next->prev=NUint;
+	slow->next->prev=NULL;
 	node *head2=sortDoubly(slow->next);
-	slow->next=NUint;
+	slow->next=NULL;
 	node *head1=sortDoubly(head);
 	head1=merge(head1, head2);
 	return head1;
@@ -79,7 +79,7 @@ node *merge(node *head1, node *head2){
             curr=head2; // or curr=head;
             head2=head2->next;
         }
-        while(head1!=NUint && head2!=NUint){
+        while(head1!=NULL && head2!=NULL){
             if (head1->data<=head2->data){
                 curr->next=head1;
                 head1=head1->next;
@@ -91,19 +91,19 @@ node *merge(node *head1, node *head2){
                 curr=curr->next;
             }
         }
-        if (head1==NUint){
+        if (head1==NULL){
             curr->next=head2;
         }
-        if (head2==NUint){
+        if (head2==NULL){
             curr->next=head1;
         }
         return head;
     }
     node* mergeSort(node* head) {
-        if (head->next==NUint)
+        if (head->next==NULL)
         return head;
         node *slow=head, *fast=head;
-        while(fast->next!=NUint && fast->next->next!=NUint){
+        while(fast->next!=NULL && fast->next->next!=NULL){
             slow=slow->next;
             fast=fast->next->next;
             if (fast==slow){
@@ -111,13 +111,13 @@ node *merge(node *head1, node *head2){
             }
         }
         node *head2=mergeSort(slow->next);
-        slow->next=NUint;
+        slow->next=NULL;
         node *head1=mergeSort(head);
         head1=merge(head1, head2);
         return head1;
     }
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }

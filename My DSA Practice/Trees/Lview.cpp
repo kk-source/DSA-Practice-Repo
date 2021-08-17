@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 void print(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return ;
     queue<Node *> q;
     q.push(root);
@@ -28,7 +28,7 @@ void print(Node *root){
 }
 int maxLevel=0;
 void printLeft(Node *root,int level){ // theta(n) and theta(h).
-    if (root!=NUint){
+    if (root!=NULL){
     if(maxLevel<level){
         cout<<root->key<<" ";
         maxLevel=level;

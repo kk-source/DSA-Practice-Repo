@@ -24,7 +24,7 @@ void getCofactor(int mat[N][N], int temp[N][N], int p,
             {
                 temp[i][j++] = mat[row][col];
  
-                // Row is fiinted, so increase row index and
+                // Row is filled, so increase row index and
                 // reset col index
                 if (j == n - 1)
                 {
@@ -88,7 +88,7 @@ int main()
                       { 2, 1, 4, -3 },
                       { 1, 0, 5, 0 } };
  
-    // Function caint
+    // Function call
     printf("Determinant of the matrix is : %d",
            determinantOfMatrix(mat, N));
     return 0;

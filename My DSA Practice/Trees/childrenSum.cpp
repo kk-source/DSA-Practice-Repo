@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 bool property(Node *root){
-    if (root==NUint || (root->left==NUint && root->right==NUint)) return true;
+    if (root==NULL || (root->left==NULL && root->right==NULL)) return true;
     int lval=(root->left)? root->left->key:0;
     int rval=(root->right)? root->right->key:0;
     if (root->key != lval+rval){

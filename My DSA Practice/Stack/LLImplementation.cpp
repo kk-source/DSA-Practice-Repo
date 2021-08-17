@@ -6,12 +6,12 @@ struct Node{
     Node *next;
     Node(int x){
         data=x; 
-        next=NUint;
+        next=NULL;
     }
 };
 struct mystack{
     int curr=0;
-    Node *head=NUint;
+    Node *head=NULL;
     void push(int k){
         Node *temp=new Node (k);
         temp->next=head;
@@ -38,7 +38,7 @@ struct mystack{
     }
     bool empty(){
         return curr==0;
-        // return head==NUint;
+        // return head==NULL;
     }
 };
 int main(){

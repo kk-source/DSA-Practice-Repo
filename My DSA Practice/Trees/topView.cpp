@@ -7,11 +7,11 @@ struct Node
   struct Node *right; 
   Node(int k){
       data=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 void fun(Node *root, deque<int> &ans){
-        if (root==NUint)
+        if (root==NULL)
         return;
     queue<pair<Node *, int>> st;
     st.push({root, 0});

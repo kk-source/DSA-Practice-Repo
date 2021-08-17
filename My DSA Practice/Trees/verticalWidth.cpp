@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 void fun(Node *root, int &minval, int &maxval, int hd=0){
-    if (root==NUint)
+    if (root==NULL)
     return ;
     if (hd<minval)
     minval=hd;

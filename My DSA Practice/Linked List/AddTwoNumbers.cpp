@@ -3,12 +3,12 @@
 using namespace std;
 Node* addSameSize(Node* head1, Node* head2, int* carry) 
 { 
-	if (head1 == NUint) 
-		return NUint; 
+	if (head1 == NULL) 
+		return NULL; 
 
 	int sum = 0;
 	
-	//aintocating memory for sum node of current two nodes.
+	//allocating memory for sum node of current two nodes.
     Node* result = new Node(sum);
 	
 	//recursively adding remaining nodes and getting the carry.
@@ -32,7 +32,7 @@ void addCarryToRemaining(Node* head1, Node* curr, int* carry, Node** result)
     
 	if (head1 != curr) 
 	{ 
-	    //cainting function recursively to add carry.
+	    //calling function recursively to add carry.
 		addCarryToRemaining(head1->next, curr, carry, result); 
 
 		sum = head1->data + *carry; 
