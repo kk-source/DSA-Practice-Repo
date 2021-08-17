@@ -26,6 +26,21 @@ string longestPalin (string S) {
         }
         return S.substr(start, len);
     }
+// int fun1(string &s1, int i, int j){ // Longest Palin substring using recursion.
+//     if (i>j)
+//     return 0;
+//     if (i==j)
+//     return 1;
+//     if (s1[i]==s1[j]){
+//         int temp=fun1(s1, i+1, j-1);
+//         if (temp==j-i-1)
+//             return temp+2;
+//         else    
+//             return max(temp, max(fun1(s1, i+1, j), fun1(s1, i, j-1)));
+//     }
+//     else
+//         return max(fun1(s1, i+1, j), fun1(s1, i, j-1));
+// }
 int main(){
     string S="aabbaaaa";
     cout << longestPalin(S);
