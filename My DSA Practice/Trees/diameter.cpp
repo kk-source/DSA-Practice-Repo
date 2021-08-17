@@ -5,16 +5,16 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 int height(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     return 1+max(height(root->left), height(root->right));
 }
 int dia(Node *root){ // O(n^2).
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     int d1=1+height(root->left)+height(root->right);
     int d2=dia(root->left);
@@ -22,7 +22,7 @@ int dia(Node *root){ // O(n^2).
     return max(max(d1,d2), d3);
 }
 int height1(Node *root, int &res){
-    if(root==NUint)
+    if(root==NULL)
         return 0;
     int lh=height1(root->left, res);
     int rh=height1(root->right, res);
@@ -36,7 +36,7 @@ int main(){
     root->right=new Node(30);    
     root->left->left=new Node(20);   
     root->right->left=new Node(6); 
-    int ans=int_MIN;
+    int ans=INT_MIN;
     height1(root, ans);
     cout << ans;
     return 0;

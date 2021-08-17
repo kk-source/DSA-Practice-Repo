@@ -8,11 +8,11 @@ struct Node
   struct Node *right; 
   Node(int k){
       data=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 void preorder(Node *root, string &str){
-        if (root==NUint){
+        if (root==NULL){
             str+="*";
             return;
         }
@@ -23,7 +23,7 @@ void preorder(Node *root, string &str){
         preorder(root->right, str);
     }
     void inorder(Node *root, string &str){
-        if (root==NUint){
+        if (root==NULL){
             str+="*";
             return;
         }

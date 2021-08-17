@@ -6,7 +6,7 @@ int power1(int n, int k){
     return 1;
     return n*power1(n,k-1);
 }
-int power2(int n, int k){ // mine= not good as some steps wiint caints wiint involve k-1 which is not good over k/2;
+int power2(int n, int k){ // mine= not good as some steps will calls will involve k-1 which is not good over k/2;
     if (k<=0)
     return 1;
     if (k%2==0)

@@ -8,16 +8,16 @@ struct Node
   struct Node *right; 
   Node(int k){
       key=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 void iterativeInorder(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return ;
     stack<Node *> st;
     Node *curr=root;
-    while(curr!=NUint || st.empty()==false){
-        while(curr!=NUint){
+    while(curr!=NULL || st.empty()==false){
+        while(curr!=NULL){
             st.push(curr);
             curr=curr->left;
         }
@@ -29,8 +29,8 @@ void iterativeInorder(Node *root){
 void iterativePreorder(Node *root){ // better.
     stack<Node *> st;
     Node *curr=root;
-    while(curr!=NUint || st.empty()==false){
-        while(curr!=NUint){
+    while(curr!=NULL || st.empty()==false){
+        while(curr!=NULL){
             cout << curr->key << " ";
             if (curr->right)
             st.push(curr->right);
@@ -42,7 +42,7 @@ void iterativePreorder(Node *root){ // better.
     }
 }
 void iterativePreorder1(Node *root){ // more space.
-    if (root==NUint)
+    if (root==NULL)
     return ;
     stack<Node *> st;
     st.push(root);

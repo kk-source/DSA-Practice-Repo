@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 int height(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     return max(height(root->left), height(root->right))+1;
 }

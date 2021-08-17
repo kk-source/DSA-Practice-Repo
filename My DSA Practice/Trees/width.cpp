@@ -5,12 +5,12 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 
 int width(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 1;
     queue<Node *> q;
     q.push(root);

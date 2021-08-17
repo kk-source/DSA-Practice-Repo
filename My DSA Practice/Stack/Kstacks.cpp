@@ -24,13 +24,13 @@ struct kStacks
         next[cap-1] = -1;
     } 
   
-    bool isFuint()   {  return (freeTop == -1);  } 
+    bool isFull()   {  return (freeTop == -1);  } 
   
     bool isEmpty(int sn)  {  return (top[sn] == -1); }
     
     void push(int x, int sn) 
     { 
-    if (isFuint()) 
+    if (isFull()) 
     { 
         cout << "\nStack Overflow\n"; 
         return; 
@@ -48,7 +48,7 @@ struct kStacks
     if (isEmpty(sn)) 
     { 
          cout << "\nStack Underflow\n"; 
-         return int_MAX; 
+         return INT_MAX; 
     }
     
     int i = top[sn]; 

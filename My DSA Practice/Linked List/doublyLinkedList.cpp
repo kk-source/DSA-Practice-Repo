@@ -6,38 +6,38 @@ struct node {
     node *next, *prev;
     node (int x){
         data=x;
-        next=NUint; prev=NUint;
+        next=NULL; prev=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
     cout << head->data << " ";
     head=head->next;
     }
 }
 node *insertbegin(node *head, int key){
     node *temp=new node(key);
-    if (head!=NUint)
+    if (head!=NULL)
     head->prev=temp;
     temp->next=head;
     return temp;
 }
 node *insertend(node *head, int key){
     node *temp=new node(key);
-    if (head==NUint)
+    if (head==NULL)
     return temp;
     node *curr=head;
-    while(curr->next!=NUint)
+    while(curr->next!=NULL)
     curr=curr->next;
     curr->next=temp;
     temp->prev=curr;
     return head;
 }
 node *rev(node *head){
-    if (head==NUint || head->next==NUint)
+    if (head==NULL || head->next==NULL)
     return head;
     node *curr=head, *temp;
-    while(curr!=NUint){
+    while(curr!=NULL){
         temp=curr->prev;
         curr->prev=curr->next;
         curr->next=temp;
@@ -46,28 +46,28 @@ node *rev(node *head){
     return temp->prev;
 }
 node *deletehead(node *head){
-    if (head==NUint)
-    return NUint;
-    if (head->next==NUint){
+    if (head==NULL)
+    return NULL;
+    if (head->next==NULL){
         delete head;
-        return NUint;
+        return NULL;
     }
     head=head->next;
     delete head->prev;
-    head->prev=NUint;
+    head->prev=NULL;
     return head;
 }
 node *deletelast(node *head){
-    if (head==NUint)
-        return NUint;
-    if (head->next==NUint){
+    if (head==NULL)
+        return NULL;
+    if (head->next==NULL){
         delete head;
-        return NUint;
+        return NULL;
     }
     node *curr=head;
-    while(curr->next!=NUint)
+    while(curr->next!=NULL)
     curr=curr->next;
-    curr->prev->next=NUint;
+    curr->prev->next=NULL;
     delete curr;
     return head;
 }

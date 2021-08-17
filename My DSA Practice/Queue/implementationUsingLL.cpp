@@ -6,20 +6,20 @@ struct Node{
     Node *next;
     Node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 struct myqueue{
     int curr;
     Node *front, *back;
     myqueue(){
-        back=NUint;
-        front=NUint;
+        back=NULL;
+        front=NULL;
         curr=0;
     } 
     void enqueue(int key){
         Node *temp=new Node(key);
-        if (back==NUint)
+        if (back==NULL)
         {
             back=temp;
             front=back;
@@ -31,12 +31,12 @@ struct myqueue{
         curr++;
     }
     void dequeue(){
-        if (front==NUint)
+        if (front==NULL)
         return;
         Node *temp=front;
         front=front->next;
-        if (front==NUint)
-        back=NUint;
+        if (front==NULL)
+        back=NULL;
         delete temp;
         curr--;
     }
@@ -44,13 +44,13 @@ struct myqueue{
         return curr;
     }
     int getFront(){
-        if (front==NUint)
-        return int_MAX;
+        if (front==NULL)
+        return INT_MAX;
         return front->data;
     }
     int getRear(){
-        if (back==NUint)
-        return int_MAX;
+        if (back==NULL)
+        return INT_MAX;
         return back->data;
     }
     bool isempty(){

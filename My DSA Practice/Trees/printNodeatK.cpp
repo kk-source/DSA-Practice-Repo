@@ -5,11 +5,11 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 void print(Node *root, int k){
-    if (root==NUint)
+    if (root==NULL)
     return;
     if (k==0){
         cout << root->key << " ";

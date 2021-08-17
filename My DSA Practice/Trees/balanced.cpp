@@ -5,16 +5,16 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 int height(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     return 1+max(height(root->left), height(root->right));
 }
 bool balanced(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return true;
     int lheight=height(root->left);
     int rheight=height(root->right);
@@ -23,7 +23,7 @@ bool balanced(Node *root){
     return (balanced(root->left) && balanced(root->right));
 }
 int balanced1(Node *root){ // better.
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     int lh=balanced1(root->left);
     if (lh==-1)

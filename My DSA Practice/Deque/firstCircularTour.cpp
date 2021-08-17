@@ -71,7 +71,7 @@ int petrol3(vector<pair<int, int>> arr, int n) // optimised of above approach.
     for (int i=0;i<n;i++){
         rem+=arr[i].first-arr[i].second;
         if (rem<0){
-            start=i+1; // if i=n-1 then ans wiint be -1.
+            start=i+1; // if i=n-1 then ans will be -1.
             prem+=rem;
             rem=0;
             cout << start << endl;

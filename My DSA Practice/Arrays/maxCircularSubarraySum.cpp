@@ -33,7 +33,7 @@ int maxCircularMost(int arr[], int n){
     }
     // cout << minval << endl;
     if(total==minval)
-    return res; // to cover the cases when aint elements are -ve.
+    return res; // to cover the cases when all elements are -ve.
     return max(res,total-minval);
 }
 int main(){//5,-2,3,4

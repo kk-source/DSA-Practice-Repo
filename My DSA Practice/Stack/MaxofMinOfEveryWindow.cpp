@@ -5,9 +5,9 @@ vector <int> maxOfMin(int arr[], int n)
     { // (n-k)+2(n-k)+3(n-k)+....=O(n^3).
         vector<int> ans;
         for (int l=1;l<=n;l++){
-            int maxval=int_MIN;
+            int maxval=INT_MIN;
         for (int i=0;i<=n-l;i++){
-            int minval=int_MAX;
+            int minval=INT_MAX;
             for (int j=0;j<l;j++){
                 minval=min(minval, arr[i+j]);
             }
@@ -19,7 +19,7 @@ vector <int> maxOfMin(int arr[], int n)
     }
 // optimised.
 void maxOfMin1(int arr[], int n){
-    // finding previous smainter.
+    // finding previous smaller.
     vector<int> ps;
     stack<int> st;
     for (int i=0;i<n;i++){
@@ -33,7 +33,7 @@ void maxOfMin1(int arr[], int n){
 
     while(st.empty()==false)
     st.pop();
-    // finding next smainter.
+    // finding next smaller.
     vector<int> ns;
     for (int i=n-1;i>=0;i--){
         while(st.empty()==false && arr[st.top()]>=arr[i])
@@ -49,7 +49,7 @@ void maxOfMin1(int arr[], int n){
         int len=ns[i]-ps[i]-1;
         ans[(len)-1]=max(ans[(len)-1],arr[i]);
     }
-    // next is always smainter than or equal to the current.
+    // next is always smaller than or equal to the current.
     for (int i=n-2;i>=0;i--)
     ans[i]=max(ans[i], ans[i+1]);
     return ans;

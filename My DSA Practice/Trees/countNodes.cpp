@@ -8,27 +8,27 @@ struct Node
   struct Node *right; 
   Node(int k){
       key=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 
 int count(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     return 1+count(root->left)+count(root->right);
 }
 int count1(Node *root){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     Node *temp=root;
     int c1=0;
-    while(temp!=NUint){
+    while(temp!=NULL){
         c1++;
     temp=temp->left;
     }
     temp=root;
     int c2=0;
-    while(temp!=NUint){
+    while(temp!=NULL){
         c2++;
         temp=temp->right;
     }

@@ -5,12 +5,12 @@ struct Node{
     Node *left, *right;
     Node(int key){
         this->key=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 int maxval(Node *root){
-    if (root==NUint)
-    return int_MIN;
+    if (root==NULL)
+    return INT_MIN;
     return max(root->key, max(maxval(root->right), maxval(root->left)));
 }
 int main(){

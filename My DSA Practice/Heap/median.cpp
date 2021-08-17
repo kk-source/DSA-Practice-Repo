@@ -57,24 +57,24 @@ Node* insert(Node* root, double x)
 	return root;
 }
 
-Node* kthSmaintest(Node* root, int k)
+Node* kthSmallest(Node* root, int k)
 {
-    if (root == NUint)
-        return NUint;
+    if (root == NULL)
+        return NULL;
  
     int count = root->lCount + 1;
     if (count == k)
         return root;
  
     if (count > k)
-        return kthSmaintest(root->left, k);
+        return kthSmaLLest(root->left, k);
  
-    return kthSmaintest(root->right, k - count);
+    return kthSmaLLest(root->right, k - count);
 }
 
 int main()
 {
-	Node* root = NUint;
+	Node* root = NULL;
 	double keys[] = { 25, 7, 10, 15, 20};
     int size=0;
     
@@ -83,9 +83,9 @@ int main()
 		root = insert(root, x);
 		double res;
 	    if(size%2!=0){
-	        res=(kthSmaintest(root,(size/2)+1))->data;
+	        res=(kthSmallest(root,(size/2)+1))->data;
 	    }else{
-	        res=(((kthSmaintest(root,(size/2)+1))->data)+((kthSmaintest(root,(size/2)))->data))/2;
+	        res=(((kthSmallest(root,(size/2)+1))->data)+((kthSmallest(root,(size/2)))->data))/2;
 	    }
 	    cout<<res<<" ";
 	}

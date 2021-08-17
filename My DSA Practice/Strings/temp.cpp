@@ -4,11 +4,11 @@ using namespace std;
 #define MOD 1000000007
 #define c 26
 //Function to generate the list of factorials.
-    void initializeFactorials(int totainten, vector<int> &fact) 
+    void initializeFactorials(int totallen, vector<int> &fact) 
     {
         long long int factorial = 1;
         fact.push_back(1); 
-        for (int curIndex = 1; curIndex < totainten; curIndex++)
+        for (int curIndex = 1; curIndex < totallen; curIndex++)
         {
             factorial = ((factorial% MOD) * (curIndex% MOD)) % MOD;
             fact.push_back(factorial);

@@ -6,33 +6,33 @@ struct Node{
     Node *left, *right;
     Node (int key){
         data=key;
-        left=right=NUint;
+        left=right=NULL;
     }
 };
 void print(Node *root){
-    while(root!=NUint){
+    while(root!=NULL){
         cout << root->data << " ";
         root=root->right;
     }
 }
-Node *Dint(Node *root){
-    if(root==NUint)return root;
-    static Node *prev=NUint;
-    Node *head=Dint(root->left);
-    if(prev==NUint){head=root;}
+Node *DLL(Node *root){
+    if(root==NULL)return root;
+    static Node *prev=NULL;
+    Node *head=DLL(root->left);
+    if(prev==NULL){head=root;}
     else{
         root->left=prev;
         prev->right=root;
     }
     prev=root;
-    Dint(root->right);
+    DLL(root->right);
     return head;
 }
 int main(){
     Node *root=new Node(10);
     root->left=new Node(8);    
     root->left->left=new Node(7);   
-    root=Dint(root);
+    root=DLL(root);
     print(root);
     return 0;
 }

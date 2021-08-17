@@ -8,13 +8,13 @@ struct Node
   struct Node *right; 
   Node(int k){
       key=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 
 int res=0;
 int burnTime(Node *root, int leaf, int &dist){
-    if(root==NUint)return 0;
+    if(root==NULL)return 0;
     if(root->key==leaf){dist=0;return 1;}
     int ldist=-1,rdist=-1;
     int lh=burnTime(root->left,leaf,ldist);
@@ -32,7 +32,7 @@ int burnTime(Node *root, int leaf, int &dist){
 }
 /*
 pair<int, bool> burn(Node *root, int leaf, int &ans){
-    if (root==NUint)
+    if (root==NULL)
     return {0, false};
     if (root->data==leaf){
         return {0, true};

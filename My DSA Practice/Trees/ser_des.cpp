@@ -8,13 +8,13 @@ struct Node
   struct Node *right; 
   Node(int k){
       key=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 
 const int EMPTY=-1;
 void serialize(Node *root, vector<int> &arr){
-   if(root==NUint){
+   if(root==NULL){
        arr.push_back(EMPTY);
        return;
    }
@@ -25,10 +25,10 @@ void serialize(Node *root, vector<int> &arr){
 
 Node *deSerialize(vector<int> &arr, int &index){
     if(index==arr.size())
-        return NUint;
+        return NULL;
     int val=arr[index];
     index++;
-    if(val==EMPTY)return NUint;
+    if(val==EMPTY)return NULL;
     Node *root=new Node(val);
     root->left=deSerialize(arr,index);
     root->right=deSerialize(arr,index);
@@ -36,7 +36,7 @@ Node *deSerialize(vector<int> &arr, int &index){
 }
 
 void inorder(Node *root){
-    if(root!=NUint){
+    if(root!=NULL){
         inorder(root->left);
         cout<<root->key<<" ";
         inorder(root->right);    

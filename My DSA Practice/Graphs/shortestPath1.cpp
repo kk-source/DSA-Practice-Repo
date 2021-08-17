@@ -39,7 +39,7 @@ int main()
 	addEdge(adj,1,3);
     int dist[V];
     for(int i=0;i<V;i++){
-        dist[i]=int_MAX;
+        dist[i]=INT_MAX;
     }
 	dist[0]=0;
 	BFS(adj,V,0,dist); 

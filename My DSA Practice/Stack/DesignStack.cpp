@@ -8,7 +8,7 @@ struct mystack{
     vector<int> arr;
     mystack(){
         curr=0;
-        minval=int_MIN;
+        minval=INT_MIN;
     }
     void push(int key){
         if (curr==0){
@@ -27,7 +27,7 @@ struct mystack{
     int top(){
         if (curr==0){
             cout << "no top element found" << endl;
-        return int_MIN;
+        return INT_MIN;
         }
         int temp=arr[curr-1];
         return temp<=0? minval: temp;
@@ -35,7 +35,7 @@ struct mystack{
     int pop(){
         if (curr==0){
             cout << "no element found" << endl;
-        return int_MIN;
+        return INT_MIN;
         }
 
         if (arr[curr-1]<=0){
@@ -59,7 +59,7 @@ struct mystack1{
     vector<int> arr;
     mystack1(){
         curr=0;
-        minval=int_MIN;
+        minval=INT_MIN;
     }
     void push(int key){
         if (curr==0){
@@ -77,7 +77,7 @@ struct mystack1{
     int pop(){
         if (curr==0){
             cout << "no element found" << endl;
-        return int_MIN;
+        return INT_MIN;
         }
         int temp=arr[curr-1];
         if (temp<=minval){
@@ -93,7 +93,7 @@ struct mystack1{
     int top(){
         if (curr==0){
             cout << "no element found" << endl;
-        return int_MIN;
+        return INT_MIN;
         }
         int temp=arr[curr-1];
         if (temp<=minval)

@@ -14,20 +14,20 @@ int evaluatePostfix(char* exp)
     
     int i; 
 
-    // Scan aint characters one by one 
+    // Scan all characters one by one 
     for (i = 0; exp[i]; ++i) 
     { 
         // if the character is blank space then continue 
         if(exp[i] == ' ')continue; 
         
         // If the scanned character is an 
-        // operand (number here), extract the fuint number 
+        // operand (number here), extract the full number 
         // Push it to the stack. 
         else if (isdigit(exp[i])) 
         { 
             int num=0; 
             
-            // extract fuint number 
+            // extract full number 
             while(isdigit(exp[i])) 
             { 
                 num = num * 10 + (int)(exp[i] - '0'); 

@@ -2,7 +2,7 @@
 using namespace std;
 // other implementation can be simple where
 // front is always at zero.
-// fdelete and finsert wiint be O(n).
+// fdelete and finsert will be O(n).
 struct mdequeue{
 int front, curr, size, *arr;
 mdequeue(int x){
@@ -12,7 +12,7 @@ front=0;
 arr=new int[x];
 }
 // rear=(front+curr-1)%size.
-bool isfuint(){
+bool isfull(){
 return curr==size;
 }
 
@@ -20,8 +20,8 @@ bool isempty(){
 return curr==0;
 }
 void finsert(int key){
-if (isfuint()){
-cout << "fuint" << endl;
+if (isfull()){
+cout << "full" << endl;
 return;}
 front=(front-1+size)%size;
 arr[front]=key;
@@ -29,8 +29,8 @@ curr++;
 }
 
 void rinsert(int key){
-if (isfuint()){
-cout << "fuint" << endl;
+if (isfull()){
+cout << "full" << endl;
 return;
 }
 int newrear=(front+curr)%size;
@@ -58,13 +58,13 @@ curr--;
 
 int getfront(){
 if (isempty())
-return int_MAX;
+return INT_MAX;
 return arr[front];
 }
 
 int getrear(){
 if (isempty())
-return int_MAX;
+return INT_MAX;
 int rear=(front+curr-1)%size;
 return arr[rear];
 }
@@ -88,6 +88,6 @@ int main()
     cout << dq.getrear() << " ";
     cout << dq.getsize() << " ";
     cout << dq.isempty() << " ";
-    cout << dq.isfuint() << " ";
+    cout << dq.isfull() << " ";
     return 0;
 }

@@ -65,7 +65,7 @@ int area2(int arr[], int n){ // three traversals.
     return ans;
 }
 // maintain an ascending stack from bottom and if ith element is greater than previous one then it means this is next smainter
-// and the previous smainter can be found by next element in the stack after it.
+// and the previous smaller can be found by next element in the stack after it.
 int area3(int arr[], int n){ // best.
     int ans=0; 
     stack<int> s;

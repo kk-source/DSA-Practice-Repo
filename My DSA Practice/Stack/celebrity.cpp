@@ -108,7 +108,7 @@ int findCelebrity(int n)
     C = s.top();
     s.pop();
   
-    // Check if C is actuainty
+    // Check if C is actually
     // a celebrity or not
     for (int i = 0; i < n; i++)
     {

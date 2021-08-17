@@ -7,24 +7,24 @@ struct Node
   struct Node *right; 
   Node(int k){
       key=k;
-      left=right=NUint;
+      left=right=NULL;
   }
 };
 Node *lca(Node *root, int a, int b){
-   if (root==NUint)
-   return NUint;
+   if (root==NULL)
+   return NULL;
    if (root->key==a || root->key==b)
    return root;
    Node *l=lca(root->left, a, b);
    Node *r=lca(root->right, a, b);
-   if (l!=NUint && r!=NUint)
+   if (l!=NULL && r!=NULL)
    return root;
-   if (l!=NUint)
+   if (l!=NULL)
    return l;
    return r;
 }
 int height(Node *root, int a){
-    if (root==NUint)
+    if (root==NULL)
     return -1;
     if (root->key==a)
     return 0;
@@ -37,7 +37,7 @@ int height(Node *root, int a){
     return 1+rh;
 }
 int findDist(Node* root, int a, int b){
-    if (root==NUint)
+    if (root==NULL)
     return 0;
     Node *mid=lca(root, a, b);
     int d1=height(mid, a);

@@ -6,21 +6,21 @@ struct node{
     node *next;
     node(int x){
         data=x;
-        next=NUint;
+        next=NULL;
     }
 };
 void print(node *head){
-    while(head!=NUint){
+    while(head!=NULL){
         cout << head->data << " ";
         head=head->next;
     }
 }
 int intersect(node *h1, node *h2){
     unordered_set<node *>s;
-    for (node *curr=h1;curr!=NUint;curr=curr->next){
+    for (node *curr=h1;curr!=NULL;curr=curr->next){
         s.insert(curr);
     }
-    for (node *curr=h2;curr!=NUint;curr=curr->next){
+    for (node *curr=h2;curr!=NULL;curr=curr->next){
         if (s.find(curr)!=s.end())
         return curr->data;
     }
@@ -28,14 +28,14 @@ int intersect(node *h1, node *h2){
 }
 int intersect1(node *h1, node *h2){
     int c1=0;
-    for (node *curr=h1;curr!=NUint;curr=curr->next)
+    for (node *curr=h1;curr!=NULL;curr=curr->next)
         c1++;
     
     int c2=0;
-    for (node *curr=h1;curr!=NUint;curr=curr->next)
+    for (node *curr=h1;curr!=NULL;curr=curr->next)
         c2++;
     int diff=abs(c1-c2);
-        node *curr=NUint, curr1=NUint;
+        node *curr=NULL, curr1=NULL;
     if (c1>=c2){
         curr=h1;
         curr1=h2;
@@ -52,7 +52,7 @@ int intersect1(node *h1, node *h2){
             diff--;
         }
     }
-    while(curr!=NUint && curr1!=NUint){
+    while(curr!=NULL && curr1!=NULL){
         if (curr==curr1)
         return curr->data;
         curr=curr->next;

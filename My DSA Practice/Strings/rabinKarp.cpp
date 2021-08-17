@@ -38,7 +38,7 @@ int main()
     // string txt = "GEEKS FOR GEEKS";string pat="GEEK";
     string txt="abcabcd";
     string pat="abcd";
-    cout<<"Aint index numbers where pattern found:"<<" ";
+    cout<<"All index numbers where pattern found:"<<" ";
     RBSearch(pat,txt,pat.size(),txt.size());
     
     return 0; 

@@ -13,19 +13,19 @@ struct mqueue1{
     return curr+1;
     }
     int getfront(){
-        return (curr==-1)? int_MIN:arr[curr];
+        return (curr==-1)? INT_MIN:arr[curr];
     }
     int getrear(){
-        return (curr==-1)? int_MIN:arr[0];
+        return (curr==-1)? INT_MIN:arr[0];
     }
-    bool isFuint(){
+    bool isFull(){
         return (curr==size-1);
     }
     bool isEmpty(){
         return (curr==-1);
     }
     void enqueue(int key){
-        if (isFuint())
+        if (isFull())
         return;
         curr++;
         arr[curr]=key;
@@ -52,7 +52,7 @@ arr= new int[x];
 front=0;
 }
 
-bool isfuint(){
+bool isfull(){
 return curr==size;
 }
 
@@ -61,8 +61,8 @@ return curr==0;
 }
 
 void enqueue(int key){
-if (isfuint()){
-cout << "fuint" << endl;
+if (isfull()){
+cout << "full" << endl;
 return;
 }
 rear=(rear+1)%size;
@@ -85,13 +85,13 @@ return curr;}
 
 int getRear(){
 if (isempty())
-return int_MAX;
+return INT_MAX;
 return arr[rear];
 }
 
 int getFront(){
 if (isempty())
-return int_MAX;
+return INT_MAX;
 return arr[front];
 }
 
@@ -109,7 +109,7 @@ int main()
     cout << q.getsize() << " ";
     cout << q.getFront() << " ";
     cout << q.getRear() << " ";
-    cout << q.isfuint() << " ";
+    cout << q.isfull() << " ";
     cout << q.isempty() << " ";
     return 0;
 }

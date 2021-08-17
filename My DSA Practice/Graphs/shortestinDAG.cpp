@@ -1,5 +1,5 @@
 #include <bits/stdc++.h> 
-#define INF int_MAX 
+#define INF INT_MAX 
 using namespace std; 
 
 class AdjListNode 
@@ -102,7 +102,7 @@ int main()
 	g.addEdge(5, 3, 1);
 
 	int s = 0; 
-	cout << "Fointowing are shortest distances from source " << s <<" \n"; 
+	cout << "Following are shortest distances from source " << s <<" \n"; 
 	g.shortestPath(s); 
 
 	return 0; 
